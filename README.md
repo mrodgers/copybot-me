@@ -1,7 +1,7 @@
 # copybot-me
 CopyBot Assistant
 
-This is a Flask-based web application that uses the OpenAI API to provide a chat interface to interact with the GPT-3.5-turbo model. Users can ask questions or provide prompts, and the assistant will generate a response using the GPT-3.5-turbo model.
+This is a Flask web application that uses the OpenAI API to provide a chat interface to interact with the GPT-3.5-turbo model. Users can ask questions or provide prompts, and the assistant will generate a response using the GPT-3.5-turbo model.
 
 Installation
 
@@ -13,12 +13,14 @@ bash
 
   pip install -r requirements.txt
 
-Set your OpenAI API key as an environment variable:
+Set your OpenAI API key as an environment variable. Copy .env.example to .env and put the key there, or export it in your shell. .env is listed in .gitignore and must not be committed.
+
 bash
 
+  cp .env.example .env
   export OPENAI_API_KEY="your_api_key_here"
 
-Replace your_api_key_here with your actual API key.
+The demo notebooks read OPENAI_API_KEY from the environment and stop with an error if it is missing. Do not paste the key into a notebook.
 
 Running the Application
 Start the Flask development server:
